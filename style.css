@@ -1,0 +1,236 @@
+:root {
+  --clr1: rgb(205, 230, 173);
+  --clr2: rgb(174, 202, 17);
+  --clr3: rgb(81, 255, 0);
+  --clr4: rgb(238, 218, 130);
+  --clr5: rgb(255, 238, 0);
+  --clr6: rgb(128, 109, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(img/bg-wallpaper2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registration-main-card,
+.sign-in-main-card {
+  max-width: 740px;
+  width: 100%;
+  height: fit-content;
+  background: rgb(60, 60, 70);
+  border-radius: 0.5rem;
+  position: relative;
+  padding: 25px 30px;
+  color: rgb(245, 245, 245);
+  font-size: 1.5rem;
+}
+
+.registration-main-card::before,
+.registration-main-card::after,
+.sign-in-main-card::before,
+.sign-in-main-card::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr1),
+    var(--clr2),
+    var(--clr3),
+    var(--clr4),
+    var(--clr5),
+    var(--clr6),
+    var(--clr5),
+    var(--clr4),
+    var(--clr3),
+    var(--clr2),
+    var(--clr1)
+  );
+  border-radius: inherit;
+  animation: rotation 8s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.registration-main-card::after,
+.sign-in-main-card::after {
+  filter: blur(3rem);
+}
+
+.input-box,
+.category {
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr1),
+    var(--clr2),
+    var(--clr3),
+    var(--clr4),
+    var(--clr5),
+    var(--clr5),
+    var(--clr4),
+    var(--clr3),
+    var(--clr2),
+    var(--clr1)
+  );
+  animation: rotation 8s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.registration-main-card .title,
+.sign-in-main-card .title {
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+
+.registration-main-card form .user-details,
+.sign-in-main-card form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+  margin-bottom: 10px;
+  width: calc(100% / 2 - 2px);
+  padding: 8px 30px;
+}
+
+.user-details .input-box .details {
+  font-weight: bolder;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 2.8rem;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border: 2px inset var(--clr5);
+  border-radius: 0.5rem;
+}
+
+form .submit-btn {
+  height: 3rem;
+  margin: 45px 0;
+}
+
+form .submit-btn input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: rgb(0, 0, 0);
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr1),
+    var(--clr2),
+    var(--clr3),
+    var(--clr4),
+    var(--clr5),
+    var(--clr6),
+    var(--clr5),
+    var(--clr4),
+    var(--clr3),
+    var(--clr2),
+    var(--clr1)
+  );
+  background-size: 220%;
+  animation: rotation 8s linear infinite;
+  cursor: pointer;
+}
+
+form .submit-btn input:active {
+  transform: translateY(4px);
+}
+
+.sign-in {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sign-in a {
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr1),
+    var(--clr2),
+    var(--clr3),
+    var(--clr4),
+    var(--clr5),
+    var(--clr5),
+    var(--clr4),
+    var(--clr3),
+    var(--clr2),
+    var(--clr1)
+  );
+  animation: rotation 8s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+@media (max-width: 584px) {
+  .registration-main-card,
+  .sign-in-main-card {
+    max-width: 100%;
+    height: 95%;
+  }
+
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .registration-main-card form .user-details,
+  .sign-in-main-card form .user-details {
+    max-height: 320px;
+    overflow-y: scroll;
+  }
+
+  .user-details::-webkit-scrollbar {
+    width: 0;
+  }
+
+  form .submit-btn {
+    height: 3rem;
+    margin: 28px 0;
+  }
+}
